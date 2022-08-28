@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+{%block body_block%}
+
+    <div class="row mt-5">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <table class="table">
+                <tr>
+                    <th>SchoolId</th>
+                    <th>SchoolName</th>
+                    <th>Email</th>
+                </tr>
+                {%for school in schools%}
+                <tr>
+                    <td>{{school.id}}</td>
+                    <td>{{school.school_name}}</td>
+                    <td>{{school.email}}</td>
+
+                    <td><a class="btn btn-success" href="{% url 'schooldetail' school.id%}">View</a></td>
+                    <td><a class="btn btn-warning" href="{% url 'editschool' school.id%}">Update</a></td>
+                    <td><a class="btn btn-danger" href="{% url 'deleteschool' school.id%}">Delete</a></td>
+
+                </tr>
+
+                {%endfor%}
+            </table>
+        </div>
+        <div class="col-1"></div>
+    </div>
+{%endblock%}
