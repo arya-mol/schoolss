@@ -1,0 +1,41 @@
+
+
+{%extends 'index.html'%}
+{%block body_block%}
+
+
+
+ <div class="row mt-5">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <table class="table">
+                <tr>
+                    <th>SchoolId</th>
+                    <th>SchoolName</th>
+                    <th>Email</th>
+                </tr>
+                {%for school in school_list%}
+                <tr>
+                    <td>{{school.id}}</td>
+                    <td>{{school.school_name}}</td>
+                    <td>{{school.email}}</td>
+
+
+                      <form action="{% url 'deleteschool' school.id %} " method="POST">
+    {% csrf_token %}
+<td><button type="submit" name="method" value="delete" class="btn btn-danger">Delete</button></td>
+</form>
+<form action="{% url 'editschool' school.id %} " method="POST">
+    {% csrf_token %}
+<td><button type="submit" name="method" value="edit" class="btn btn-primary">Update</button></td>
+</form>
+
+                </tr>
+
+                {%endfor%}
+            </table>
+        </div>
+        <div class="col-1"></div>
+    </div>
+{%endblock%}
+

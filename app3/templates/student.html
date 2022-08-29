@@ -1,5 +1,5 @@
 
-{%extends 'base.html'%}
+{%extends 'index.html'%}
 {%block body_block%}
 
 
@@ -8,7 +8,7 @@
     <div class="col-8">
       <form action="" method="post">
         {%csrf_token%}
-        {{form.as_p}}
+        {{st_form.as_p}}
         <div class="mb-3">
           <input type="submit" value="Addstudent">
         </div>
@@ -16,4 +16,5 @@
     </div>
     <div class="col-2"></div>
   </div>
+
 {%endblock%}

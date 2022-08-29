@@ -13,5 +13,14 @@ urlpatterns=[
     path("school/<int:id>", views.SchoolDetail.as_view(), name="schooldetail"),
     path("school/change/<int:id>", views.ChangeSchool.as_view(), name="editschool"),
     path("school/remove/<int:id>", views.SchoolDelete.as_view(), name="deleteschool"),
+    # path('',views.home,name='home'),
+    # path('student/list', views.list_student, name='liststudent'),
+    # path('school/list', views.list_school, name='listschool'),
+    # path('student/add',views.student_details,name='addstudent'),
+    # path('school/add', views.school_details, name='addschool'),
+    # path("student/remove/<int:id>", views.student_delete, name="deletestudent"),
+    # path("school/remove/<int:id>", views.school_delete, name="deleteschool"),
+    # path("student/change/<int:id>", views.student_details, name="editstudent"),
+    # path("school/change/<int:id>", views.school_details, name="editschool"),
 
 ]
